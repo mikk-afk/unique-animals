@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unique Animals Website</title>
+<style>
+/* 🌿 Reset & Base Styles */
+* { box-sizing:border-box; margin:0; padding:0; }
+body { font-family:'Segoe UI', Arial, sans-serif; background:#e0f7fa; color:#333; line-height:1.6; }
+a { text-decoration:none; color:inherit; }
+h1,h2,h3,p { margin-bottom:10px; }
+
+/* 🌐 Navbar */
+header { background: linear-gradient(135deg, #4caf50, #81c784); color:white; padding:20px 0; text-align:center; position:relative; }
+header h1 { font-size:2rem; text-shadow:2px 2px 4px #000; }
+nav { margin-top:10px; }
+nav a { color:white; margin:0 8px; font-weight:bold; padding:6px 12px; border-radius:8px; background: rgba(255,255,255,0.2); transition:0.3s; }
+nav a:hover { background: rgba(255,255,255,0.4); }
+
+/* 🌍 Pages */
+.page { display:none; min-height:100vh; padding:20px; }
+#login, #signup { display:flex; justify-content:center; align-items:center; background-size:cover; background-position:center; }
+form { background: rgba(255,255,255,0.95); max-width:400px; width:90%; padding:30px; border-radius:20px; box-shadow:0 8px 25px rgba(0,0,0,0.3); }
+input[type="text"], input[type="password"], input[type="email"] { width:100%; padding:12px; margin:10px 0 20px; border-radius:10px; border:1px solid #ccc; font-size:1rem; }
+button { width:100%; padding:12px; border:none; border-radius:10px; background: linear-gradient(90deg,#ff8a65,#ff7043); color:white; font-size:1rem; cursor:pointer; transition:0.3s; }
+button:hover { background: linear-gradient(90deg,#ff7043,#ff5722); }
+small { display:block; text-align:center; margin-top:10px; }
+
+/* 🏠 Home Page */
+#home img { width:90%; max-width:600px; border-radius:15px; margin:20px 0; box-shadow:0 8px 20px rgba(0,0,0,0.3); }
+
+/* 🦊 Animal Cards Grid */
+#animalCards { display:grid; grid-template-columns: repeat(auto-fit, minmax(250px,1fr)); gap:20px; padding:20px; }
+.animal-card { background: linear-gradient(145deg,#fff59d,#ffe082); padding:15px; border-radius:20px; width:100%; box-shadow:0 6px 20px rgba(0,0,0,0.2); transition: transform 0.3s, box-shadow 0.3s; text-align:center; cursor:pointer; }
+.animal-card:hover { transform:translateY(-8px); box-shadow:0 15px 30px rgba(0,0,0,0.3); }
+.animal-card img { width:100%; border-radius:20px; margin-bottom:10px; }
+.animal-card h3 { color:#f57c00; }
+
+/* Backgrounds */
+#login { background-image:url('https://cdn.pixabay.com/photo/2018/02/26/18/42/axolotl-3185585_1280.jpg'); }
+#signup { background-image:url('https://cdn.pixabay.com/photo/2021/02/05/21/22/capybara-5982198_1280.jpg'); }
+
+/* Language Selector */
+#langSelector { position:absolute; top:20px; right:20px; padding:8px 12px; border-radius:5px; border:none; font-weight:bold; z-index:100; }
+
+@media(max-width:500px){
+  header h1 { font-size:1.5rem; }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unique Animals Website</title>
+<style>
+/* 🌿 Reset & Base Styles */
+* { box-sizing:border-box; margin:0; padding:0; }
+body { font-family:'Segoe UI', Arial, sans-serif; background:#e0f7fa; color:#333; line-height:1.6; }
+a { text-decoration:none; color:inherit; }
+h1,h2,h3,p { margin-bottom:10px; }
+
+/* 🌐 Navbar */
+header { background: linear-gradient(135deg, #4caf50, #81c784); color:white; padding:20px 0; text-align:center; position:relative; }
+header h1 { font-size:2rem; text-shadow:2px 2px 4px #000; }
+nav { margin-top:10px; }
+nav a { color:white; margin:0 8px; font-weight:bold; padding:6px 12px; border-radius:8px; background: rgba(255,255,255,0.2); transition:0.3s; }
+nav a:hover { background: rgba(255,255,255,0.4); }
+
+/* 🌍 Pages */
+.page { display:none; min-height:100vh; padding:20px; }
+#login, #signup { display:flex; justify-content:center; align-items:center; background-size:cover; background-position:center; }
+form { background: rgba(255,255,255,0.95); max-width:400px; width:90%; padding:30px; border-radius:20px; box-shadow:0 8px 25px rgba(0,0,0,0.3); }
+input[type="text"], input[type="password"], input[type="email"] { width:100%; padding:12px; margin:10px 0 20px; border-radius:10px; border:1px solid #ccc; font-size:1rem; }
+button { width:100%; padding:12px; border:none; border-radius:10px; background: linear-gradient(90deg,#ff8a65,#ff7043); color:white; font-size:1rem; cursor:pointer; transition:0.3s; }
+button:hover { background: linear-gradient(90deg,#ff7043,#ff5722); }
+small { display:block; text-align:center; margin-top:10px; }
+
+/* 🏠 Home Page */
+#home img { width:90%; max-width:600px; border-radius:15px; margin:20px 0; box-shadow:0 8px 20px rgba(0,0,0,0.3); }
+
+/* 🦊 Animal Cards Grid */
+#animalCards { display:grid; grid-template-columns: repeat(auto-fit, minmax(250px,1fr)); gap:20px; padding:20px; }
+.animal-card { background: linear-gradient(145deg,#fff59d,#ffe082); padding:15px; border-radius:20px; width:100%; box-shadow:0 6px 20px rgba(0,0,0,0.2); transition: transform 0.3s, box-shadow 0.3s; text-align:center; cursor:pointer; }
+.animal-card:hover { transform:translateY(-8px); box-shadow:0 15px 30px rgba(0,0,0,0.3); }
+.animal-card img { width:100%; border-radius:20px; margin-bottom:10px; }
+.animal-card h3 { color:#f57c00; }
+
+/* Backgrounds */
+#login { background-image:url('https://cdn.pixabay.com/photo/2018/02/26/18/42/axolotl-3185585_1280.jpg'); }
+#signup { background-image:url('https://cdn.pixabay.com/photo/2021/02/05/21/22/capybara-5982198_1280.jpg'); }
+
+/* Language Selector */
+#langSelector { position:absolute; top:20px; right:20px; padding:8px 12px; border-radius:5px; border:none; font-weight:bold; z-index:100; }
+
+@media(max-width:500px){
+  header h1 { font-size:1.5rem; }
+  form { width:90%; padding:20px; }
+}
+</style>
+</head>
+<body>
+
+<!-- Language Selector -->
+<select id="langSelector">
+  <option value="en">English</option>
+  <option value="ms">Malay</option>
+</select>
+
+<!-- 🔐 LOGIN PAGE -->
+<section id="login" class="page">
+  <form id="loginForm">
+    <h1 id="loginTitle">🐾 Unique Animals</h1>
+    <label id="usernameLabel">Username:</label>
+    <input id="loginUsername" type="text" placeholder="Enter username" required>
+    <label id="passwordLabel">Password:</label>
+    <input id="loginPassword" type="password" placeholder="Enter password" required>
+    <button type="submit" id="loginBtn">Login</button>
+    <small id="signupPrompt">Don't have an account? <a href="#signup" id="signupLink">Sign Up</a></small>
+  </form>
+</section>
+
+<!-- 🏠 HOME PAGE -->
+<section id="home" class="page">
+  <header>
+    <h1>🐾 <span id="homeTitle">Unique Animals</span></h1>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#animals">Animal Info</a>
+      <a href="#login">Logout</a>
+    </nav>
+  </header>
+  <img src="https://cdn.pixabay.com/photo/2015/03/26/10/02/pangolin-690185_1280.jpg" alt="Pangolin">
+  <h2 id="homeHeading">Explore Nature’s Rarest Creatures 🌿</h2>
+  <p id="homeText">Discover fascinating animals from across the globe — from axolotls to platypuses! Click "Animal Info" to explore more.</p>
+</section>
+
+<!-- 🐾 ANIMAL INFO PAGE -->
+<section id="animals" class="page">
+  <header>
+    <h1>🐾 <span id="animalTitle">Unique Animals</span></h1>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#animals">Animal Info</a>
+      <a href="#login">Logout</a>
+    </nav>
+  </header>
+  <h2 id="animalHeading">Unique Animal Facts 🐾</h2>
+  <div id="animalCards"></div>
+</section>
+
+<!-- 📝 SIGN UP PAGE -->
+<section id="signup" class="page">
+  <form id="signupForm">
+    <h1 id="signupTitle">📝 Create Your Account</h1>
+    <label id="emailLabel">Email:</label>
+    <input type="email" placeholder="Enter email" required>
+    <label id="usernameSignLabel">Username:</label>
+    <input type="text" placeholder="Choose username" required>
+    <label id="passwordSignLabel">Password:</label>
+    <input type="password" placeholder="Create password" required>
+    <button type="submit" id="signupBtn">Sign Up</button>
+    <small id="loginPrompt">Already have an account? <a href="#login" id="loginLink">Login</a></small>
+  </form>
+</section>
+
+<script>
+// 🌍 Animals Array (bilingual)
+const animals = [
+{ name: {en:"Axolotl", ms:"Axolotl"}, 
+  img:"https://cdn.pixabay.com/photo/2018/02/26/18/42/axolotl-3185585_1280.jpg",
+  desc: { en:"The axolotl (Ambystoma mexicanum) is a remarkable amphibian native to the lakes near Mexico City...", 
+          ms:"Axolotl (Ambystoma mexicanum) adalah amfibia luar biasa yang berasal dari tasik berhampiran Mexico City..." } 
+}, 
+{ name: {en:"Pangolin", ms:"Pangolin"}, 
+  img:"https://cdn.pixabay.com/photo/2015/03/26/10/02/pangolin-690185_1280.jpg",
+  desc: { en:"The pangolin (Manis species) is a scaly mammal found across Africa and Asia...", 
+          ms:"Pangolin (Manis species) adalah mamalia bersisik yang ditemui di seluruh Afrika dan Asia..." } 
+},
+{ name: {en:"Aye-aye", ms:"Aye-aye"},
+  img:"https://cdn.pixabay.com/photo/2017/08/07/13/57/aye-aye-2609376_1280.jpg",
+  desc: { en:"The aye-aye (Daubentonia madagascariensis) is one of the most unusual primates...", 
+          ms:"Aye-aye (Daubentonia madagascariensis) adalah primat yang sangat luar biasa..." } 
+},
+{ name: {en:"Glass Frog", ms:"Katak Kaca"},
+  img:"https://cdn.pixabay.com/photo/2017/09/14/19/48/glass-frog-2745058_1280.jpg",
+  desc: { en:"The glass frog (Centrolenidae family) is native to Central and South American rainforests...", 
+          ms:"Katak kaca (keluarga Centrolenidae) berasal dari hutan hujan Amerika Tengah dan Selatan..." } 
+},
+{ name: {en:"Capybara", ms:"Capybara"},
+  img:"https://cdn.pixabay.com/photo/2021/02/05/21/22/capybara-5982198_1280.jpg",
+  desc: { en:"The capybara (Hydrochoerus hydrochaeris) is the world’s largest rodent...", 
+          ms:"Capybara (Hydrochoerus hydrochaeris) adalah rodent terbesar di dunia..." } 
+},
+{ name: {en:"Maned Wolf", ms:"Serigala Berbulu Panjang"},
+  img:"https://cdn.pixabay.com/photo/2017/06/10/07/19/maned-wolf-2384385_1280.jpg",
+  desc: { en:"The maned wolf (Chrysocyon brachyurus) is a unique canid found in South America...", 
+          ms:"Serigala berbulu panjang (Chrysocyon brachyurus) adalah canid unik yang ditemui di padang rumput Amerika Selatan..." } 
+},
+{ name: {en:"Pink Fairy Armadillo", ms:"Armadillo Peri Merah Jambu"},
+  img:"https://cdn.pixabay.com/photo/2021/03/03/18/52/pink-fairy-armadillo-6078261_1280.jpg",
+  desc: { en:"The pink fairy armadillo (Chlamyphorus truncatus) is the smallest armadillo species...", 
+          ms:"Armadillo peri merah jambu (Chlamyphorus truncatus) adalah spesies armadillo terkecil..." } 
+},
+{ name: {en:"Manatee", ms:"Manatee"},
+  img:"https://cdn.pixabay.com/photo/2016/11/29/05/39/manatee-1867283_1280.jpg",
+  desc: { en:"The manatee (Trichechus species), often called the sea cow, inhabits warm coastal waters...", 
+          ms:"Manatee (spesies Trichechus), sering dipanggil lembu laut, tinggal di perairan pantai yang hangat..." } 
+},
+{ name: {en:"Shoebill", ms:"Burung Shoebill"},
+  img:"https://cdn.pixabay.com/photo/2017/01/21/12/04/shoebill-1993197_1280.jpg",
+  desc: { en:"The shoebill (Balaeniceps rex) is a prehistoric-looking bird native to Central and East Africa...", 
+          ms:"Burung shoebill (Balaeniceps rex) adalah burung kelihatan purba yang berasal dari paya dan tanah lembap di Afrika Tengah dan Timur..." } 
+},
+{ name: {en:"Platypus", ms:"Platypus"},
+  img:"https://cdn.pixabay.com/photo/2013/11/28/10/03/platypus-218992_1280.jpg",
+  desc: { en:"The platypus (Ornithorhynchus anatinus) is one of the most extraordinary animals in the world...", 
+          ms:"Platypus (Ornithorhynchus anatinus) adalah salah satu haiwan paling luar biasa di dunia..." } 
+}
+];
+// 🌱 Populate Animals
+const animalCardsContainer = document.getElementById("animalCards");
+function populateAnimals(){
+  const lang = document.getElementById("langSelector").value;
+  animalCardsContainer.innerHTML = "";
+  animals.forEach(a=>{
+    const card = document.createElement("div");
+    card.className="animal-card";
+    card.innerHTML=`<h3>${a.name[lang]}</h3><p>${a.desc[lang]}</p>`;
+    animalCardsContainer.appendChild(card);
+  });
+}
+
+// 🌐 Page Navigation
+const pages = document.querySelectorAll(".page");
+function showPage(id){
+  pages.forEach(p=>p.style.display="none");
+  const page = document.getElementById(id);
+  if(page) page.style.display="block";
+  if(id==="animals") populateAnimals();
+}
+
+// 🌱 UI Texts in Multiple Languages
+const uiText = {
+  en: {
+    loginTitle:"🐾 Unique Animals", usernameLabel:"Username:", passwordLabel:"Password:", loginBtn:"Login",
+    signupPrompt:"Don't have an account? Sign Up", signupTitle:"📝 Create Your Account", emailLabel:"Email:",
+    usernameSignLabel:"Username:", passwordSignLabel:"Password:", signupBtn:"Sign Up",
+    loginPrompt:"Already have an account? Login", homeTitle:"Unique Animals", homeHeading:"Explore Nature’s Rarest Creatures 🌿",
+    homeText:"Discover fascinating animals from across the globe — from axolotls to platypuses! Click 'Animal Info' to explore more.",
+    animalTitle:"Unique Animals", animalHeading:"Unique Animal Facts 🐾"
+  },
+  ms: {
+    loginTitle:"🐾 Haiwan Unik", usernameLabel:"Nama Pengguna:", passwordLabel:"Kata Laluan:", loginBtn:"Log Masuk",
+    signupPrompt:"Tiada akaun? Daftar", signupTitle:"📝 Cipta Akaun Anda", emailLabel:"Emel:", usernameSignLabel:"Nama Pengguna:",
+    passwordSignLabel:"Kata Laluan:", signupBtn:"Daftar", loginPrompt:"Sudah mempunyai akaun? Log Masuk",
+    homeTitle:"Haiwan Unik", homeHeading:"Terokai Haiwan Paling Jarang 🌿",
+    homeText:"Temui haiwan menarik dari seluruh dunia — dari axolotl hingga platypus! Klik 'Info Haiwan' untuk ketahui lebih lanjut.",
+    animalTitle:"Haiwan Unik", animalHeading:"Fakta Haiwan Unik 🐾"
+  }
+};
+
+// 🌍 Apply Language
+function applyLanguage(lang){
+  document.getElementById("loginTitle").innerText = uiText[lang].loginTitle;
+  document.getElementById("usernameLabel").innerText = uiText[lang].usernameLabel;
+  document.getElementById("passwordLabel").innerText = uiText[lang].passwordLabel;
+  document.getElementById("loginBtn").innerText = uiText[lang].loginBtn;
+  document.getElementById("signupPrompt").innerHTML = uiText[lang].signupPrompt.replace("Sign Up", `<a href="#signup">${lang==="en"?"Sign Up":"Daftar"}</a>`);
+
+  document.getElementById("signupTitle").innerText = uiText[lang].signupTitle;
+  document.getElementById("emailLabel").innerText = uiText[lang].emailLabel;
+  document.getElementById("usernameSignLabel").innerText = uiText[lang].usernameSignLabel;
+  document.getElementById("passwordSignLabel").innerText = uiText[lang].passwordSignLabel;
+  document.getElementById("signupBtn").innerText = uiText[lang].signupBtn;
+  document.getElementById("loginPrompt").innerHTML = uiText[lang].loginPrompt.replace("Login", `<a href="#login">${lang==="en"?"Login":"Log Masuk"}</a>`);
+
+  document.getElementById("homeTitle").innerText = uiText[lang].homeTitle;
+  document.getElementById("homeHeading").innerText = uiText[lang].homeHeading;
+  document.getElementById("homeText").innerText = uiText[lang].homeText;
+
+  document.getElementById("animalTitle").innerText = uiText[lang].animalTitle;
+  document.getElementById("animalHeading").innerText = uiText[lang].animalHeading;
+
+  if(document.getElementById("animals").style.display === "block") populateAnimals();
+}
+
+// 🌍 Language Selector
+document.getElementById("langSelector").addEventListener("change", e=>{
+  const lang = e.target.value;
+  applyLanguage(lang);
+});
+
+// 🌟 Navigation Links
+document.querySelectorAll("a[href^='#']").forEach(link=>{
+  link.addEventListener("click", e=>{
+    e.preventDefault();
+    const target = link.getAttribute("href").substring(1);
+    showPage(target);
+    window.location.hash = target;
+  });
+});
+
+// 🌟 Show Page on Load
+window.addEventListener("load", ()=>{
+  const lang = document.getElementById("langSelector").value;
+  applyLanguage(lang);
+  const hash = window.location.hash.substring(1);
+  if(hash) showPage(hash);
+  else showPage("login");
+});
+
+// 🔐 Login Simulation
+const loginForm = document.getElementById("loginForm");
+loginForm.addEventListener("submit", e=>{
+  e.preventDefault();
+  const username = document.getElementById("loginUsername").value.trim();
+  const password = document.getElementById("loginPassword").value.trim();
+  const savedUser = JSON.parse(localStorage.getItem("userAccount"));
+
+  if(!username || !password) alert("Please enter both username and password!");
+  else if(!savedUser) alert("No account found. Please Sign Up first.");
+  else if(username === savedUser.username && password === savedUser.password) showPage("home");
+  else alert("Username or password is incorrect!");
+});
+
+// 📝 Signup Simulation
+const signupForm = document.getElementById("signupForm");
+signupForm.addEventListener("submit", e=>{
+  e.preventDefault();
+  const username = signupForm.querySelector('input[type="text"]').value.trim();
+  const password = signupForm.querySelector('input[type="password"]').value.trim();
+  if(!username || !password){ alert("Please fill all fields!"); return; }
+  localStorage.setItem("userAccount", JSON.stringify({username,password}));
+  alert("Account created successfully!");
+  showPage("login");
+});
+</script>
+</body>
+</html>
